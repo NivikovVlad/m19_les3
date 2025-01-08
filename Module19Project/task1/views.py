@@ -40,7 +40,9 @@ class PageMain(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(PageMain, self).get_context_data(**kwargs)
+        username = Buyer.objects.last()
         context['title'] = 'Главная'
+        context['username'] = username
         return context
 
 
